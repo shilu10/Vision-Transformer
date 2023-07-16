@@ -6,7 +6,7 @@ from tensorflow.keras import *
 from tensorflow.keras.layers import * 
 import numpy as np 
 import os, sys, shutil
-from tensorflow.keras.layers import Dense, Dropout, LayerNormalization
+from tensorflow.keras.layers import Conv2D, Dropout, LayerNormalization, Dense, Input, Add
 from ml_collections import ConfigDict 
 
 

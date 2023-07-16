@@ -1,7 +1,7 @@
 import sys 
 from tensorflow import keras 
 import tensorflow as tf 
-from tensorflow.keras.layers import Conv2D, Dropout, LayerNormalization, Dense, Input
+from tensorflow.keras.layers import Conv2D, Dropout, LayerNormalization, Dense, Input, Add
 import numpy as np 
 from ml_collections import ConfigDict 
 import os, sys 
