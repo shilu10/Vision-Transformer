@@ -1,5 +1,5 @@
-from main import TFViTEmbeddings, TFVITTransformerBlock
-from utils import * 
+from .main import TFViTEmbeddings, TFVITTransformerBlock
+from .utils import * 
 import tensorflow as tf 
 import tensorflow.keras as keras 
 from tensorflow.keras import * 

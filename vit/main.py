@@ -1,14 +1,15 @@
 import sys 
 from tensorflow import keras 
 import tensorflow as tf 
+from tensorflow.keras.layers import Conv2D, Dropout, LayerNormalization, Dense, Input
 import numpy as np 
 from ml_collections import ConfigDict 
 import os, sys 
 from tensorflow.keras import layers
-from utils import get_initializer
+from .utils import get_initializer
 from typing import * 
 from collections import *
-
+import collections
 
 
 class TFViTPatchEmbeddings(keras.layers.Layer):
