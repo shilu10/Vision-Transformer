@@ -132,18 +132,16 @@ class TFViTEmbeddings(keras.layers.Layer):
         return encoded_patches
 
 
-def mlp(x: int, dropout_rate: float, hidden_units: List[int]):
-    """FFN for a Transformer block."""
-    # Iterate over the hidden units and
-    # add Dense => Dropout.
-    for (idx, units) in enumerate(hidden_units):
-        x = layers.Dense(
-            units,
-            activation=tf.nn.gelu if idx == 0 else None,
-            bias_initializer=keras.initializers.RandomNormal(stddev=1e-6),
-        )(x)
-        x = layers.Dropout(dropout_rate)(x)
-    return x
+def mlp(dropout_rate, hidden_units):
+  mlp_block = keras.Sequential(
+      [
+          Dense(hidden_units[0], activation=tf.nn.gelu, bias_initializer=keras.initializers.RandomNormal(stddev=1e-6)),
+          Dropout(dropout_rate),
+          Dense(hidden_units[1], bias_initializer=keras.initializers.RandomNormal(stddev=1e-6)),
+          Dropout(dropout_rate)
+      ]
+  )
+  return mlp_block
 
 
 # Referred from: github.com:rwightman/pytorch-image-models.
