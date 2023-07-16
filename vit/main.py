@@ -110,7 +110,7 @@ class TFViTEmbeddings(keras.layers.Layer):
         # repeating the class token for n batch size
         cls_tokens = tf.tile(self.cls_token, (batch_size, 1, 1))
 
-        if "distilled" in config.model_name: 
+        if "distilled" in self.config.model_name: 
           dist_tokens = tf.tile(self.dist_token, (batch_size, 1, 1))
           if dist_tokens.dtype != patch_embeddings.dtype:
             dist_tokens = tf.cast(dist_tokens, patch_embeddings.dtype)
