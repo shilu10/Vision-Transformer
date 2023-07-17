@@ -47,8 +47,8 @@ def port(model_type, model_savepath, include_top):
     tf_model = model_cls(config)
 
     #print(tf_model.positional_embedding, tf_model.cls_token)
-
-    dummy_inputs = tf.ones((2, 224, 224, 3))
+    image_dim = data.get("image_size")
+    dummy_inputs = tf.ones((2, image_dim, image_dim, 3))
     _ = tf_model(dummy_inputs)[0]
 
     if include_top:

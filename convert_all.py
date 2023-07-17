@@ -17,13 +17,13 @@ all_model_types = [
     "deit_base_distilled_patch16_384"
 ]
 
-def port_all(mtype="classifier"):
+def port_all(mtype="classifier", model_savepath="models/"):
     if mtype == "classifier":
         for model_type in all_model_types:
             print("Processing model type: ", model_type)
             port(
                 model_type = model_type,
-                model_savepath = ".",
+                model_savepath = model_savepath,
                 include_top = True
             )
     
