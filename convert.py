@@ -44,7 +44,7 @@ def port(model_type, model_savepath, include_top):
         include_top = include_top
     )
 
-    tf_model = ViTDistilled(config)
+    tf_model = model_cls(config)
 
     #print(tf_model.positional_embedding, tf_model.cls_token)
 
