@@ -126,7 +126,6 @@ class TFViTEmbeddings(keras.layers.Layer):
           patch_embeddings = tf.concat([cls_tokens, patch_embeddings], axis=1)
 
         # adding positional embedding to patch_embeddings
-        print(patch_embeddings.shape, self.position_embeddings.shape)
         encoded_patches = patch_embeddings + self.position_embeddings
         encoded_patches = self.dropout(encoded_patches)
 
@@ -351,7 +350,6 @@ class TFVITTransformerBlock(keras.Model):
 
         # first layernormalization
         x1 = self.layernorm_before(hidden_states)
-        print(x1.shape, 'input to transformer attention')
         attention_output, attention_scores = self.attention(x1, output_attentions=True)
 
         attention_output = (

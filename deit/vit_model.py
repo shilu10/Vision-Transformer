@@ -50,7 +50,6 @@ class ViTClassifier(keras.Model):
 
         # Create patches and project the patches.
         projected_patches = self.patch_embed(inputs)
-        print(projected_patches.shape)
 
         encoded_patches = self.dropout(projected_patches)
 
