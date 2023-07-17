@@ -158,7 +158,7 @@ def port(model_type, model_savepath, include_top):
                     config,
                 )
 
-                if isinstance(layer, m.TFViTAttention):
+                if isinstance(layer, main.TFViTAttention):
                     # Key
                     layer.self_attention.key = modify_tf_block(
                         layer.self_attention.key,
