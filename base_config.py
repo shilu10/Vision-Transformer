@@ -35,8 +35,7 @@ def get_baseconfig(model_type="deit_tiny_patch16_224",
 
     config.n_channels = 3
     config.model_type = config.model_name
-    config.in_features = config.projection_dim
-    config.hidden_features = 4 * config.projection_dim
+    config.mlp_units = [config.projection_dim, 4 * config.projection_dim]
     config.include_top = True
 
     return config.lock()

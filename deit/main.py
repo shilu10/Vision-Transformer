@@ -14,6 +14,7 @@ import math
 import numpy as np 
 import glob, shutil
 
+
 class TFViTPatchEmbeddings(keras.layers.Layer):
     """
     This class turns `pixel_values` of shape `(batch_size, num_channels, height, width)` into the initial
