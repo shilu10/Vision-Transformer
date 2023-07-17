@@ -1,0 +1,6 @@
+model_type: deit_small_patch16_224 
+image_size: 224 
+patch_size: 16 
+num_heads: 6
+num_layers: 12 
+projection_dim: 384
